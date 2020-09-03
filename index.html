@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Graph Calculator</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Physical</h3>
+				<div class="form-group">
+					<label for="">Hourly Price</label>
+					<input type="number" class="form-control p_unit_price">
+				</div>
+				<table class="table physical">
+					<thead>
+						<tr>
+							<th>Month</th>
+							<th>Hours</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>January</td>
+							<td><input type="number" data-month="jan" class="jan"></td>
+						</tr>
+						<tr>
+							<td>February</td>
+							<td><input type="number" data-month="feb" class="feb"></td>
+						</tr>
+						<tr>
+							<td>March</td>
+							<td><input type="number" data-month="mar" class="mar"></td>
+						</tr>
+						<tr>
+							<td>April</td>
+							<td><input type="number" data-month="apr" class="apr"></td>
+						</tr>
+						<tr>
+							<td>May</td>
+							<td><input type="number" data-month="may" class="may"></td>
+						</tr>
+						<tr>
+							<td>June</td>
+							<td><input type="number" data-month="jun" class="jun"></td>
+						</tr>
+						<tr>
+							<td>July</td>
+							<td><input type="number" data-month="jul" class="jul"></td>
+						</tr>
+						<tr>
+							<td>August</td>
+							<td><input type="number" data-month="aug" class="aug"></td>
+						</tr>
+						<tr>
+							<td>September</td>
+							<td><input type="number" data-month="sep" class="sep"></td>
+						</tr>
+						<tr>
+							<td>October</td>
+							<td><input type="number" data-month="oct" class="oct"></td>
+						</tr>
+						<tr>
+							<td>November</td>
+							<td><input type="number" data-month="nov" class="nov"></td>
+						</tr>
+						<tr>
+							<td>December</td>
+							<td><input type="number" data-month="dec" class="dec"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<h3>Digital</h3>
+				<div class="form-group">
+					<label for="">Unit Price</label>
+					<input type="number" class="form-control d_unit_price">
+				</div>
+				<table class="table digital">
+					<thead>
+						<tr>
+							<th>Month</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>January</td>
+							<td><input type="number" data-month="jan" class="jan"></td>
+						</tr>
+						<tr>
+							<td>February</td>
+							<td><input type="number" data-month="feb" class="feb"></td>
+						</tr>
+						<tr>
+							<td>March</td>
+							<td><input type="number" data-month="mar" class="mar"></td>
+						</tr>
+						<tr>
+							<td>April</td>
+							<td><input type="number" data-month="apr" class="apr"></td>
+						</tr>
+						<tr>
+							<td>May</td>
+							<td><input type="number" data-month="may" class="may"></td>
+						</tr>
+						<tr>
+							<td>June</td>
+							<td><input type="number" data-month="jun" class="jun"></td>
+						</tr>
+						<tr>
+							<td>July</td>
+							<td><input type="number" data-month="jul" class="jul"></td>
+						</tr>
+						<tr>
+							<td>August</td>
+							<td><input type="number" data-month="aug" class="aug"></td>
+						</tr>
+						<tr>
+							<td>September</td>
+							<td><input type="number" data-month="sep" class="sep"></td>
+						</tr>
+						<tr>
+							<td>October</td>
+							<td><input type="number" data-month="oct" class="oct"></td>
+						</tr>
+						<tr>
+							<td>November</td>
+							<td><input type="number" data-month="nov" class="nov"></td>
+						</tr>
+						<tr>
+							<td>December</td>
+							<td><input type="number" data-month="dec" class="dec"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Revenue</th>
+							<th>JAN</th>
+							<th>FEB</th>
+							<th>MAR</th>
+							<th>APR</th>
+							<th>MAY</th>
+							<th>JUN</th>
+							<th>JUL</th>
+							<th>AUG</th>
+							<th>SEP</th>
+							<th>OCT</th>
+							<th>NOV</th>
+							<th>DEC</th>
+							<th>Total</th>
+							<th>%</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="rev_physical">
+							<td>Physical</td>
+							<td class="jan"></td>
+							<td class="feb"></td>
+							<td class="mar"></td>
+							<td class="apr"></td>
+							<td class="may"></td>
+							<td class="jun"></td>
+							<td class="jul"></td>
+							<td class="aug"></td>
+							<td class="sep"></td>
+							<td class="oct"></td>
+							<td class="nov"></td>
+							<td class="dec"></td>
+							<td class="physical_total"></td>
+							<td class="percent"></td>
+						</tr>
+						<tr class="rev_digital">
+							<td>Digital</td>
+							<td class="jan"></td>
+							<td class="feb"></td>
+							<td class="mar"></td>
+							<td class="apr"></td>
+							<td class="may"></td>
+							<td class="jun"></td>
+							<td class="jul"></td>
+							<td class="aug"></td>
+							<td class="sep"></td>
+							<td class="oct"></td>
+							<td class="nov"></td>
+							<td class="dec"></td>
+							<td class="digital_total"></td>
+							<td class="percent"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script>
+		function drawChart(physical, digital) {
+			var ctx = document.getElementById('myChart').getContext('2d');
+			if (window.chart != undefined) {
+				window.chart.destroy()
+			}
+			var chart = new Chart(ctx, {
+				// The type of chart we want to create
+				type: 'line',
+
+				// The data for our dataset
+				data: {
+					labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+					datasets: [{
+						label: 'Physical',
+						borderColor: 'rgb(255, 99, 132)',
+						data: [physical.jan, physical.feb, physical.mar, physical.apr, physical.may, physical.jun, physical.jul, physical.aug, physical.sep, physical.oct, physical.nov, physical.dec]
+					}, {
+						label: 'Digital',
+						borderColor: 'blue',
+						data: [digital.jan, digital.feb, digital.mar, digital.apr, digital.may, digital.jun, digital.jul, digital.aug, digital.sep, digital.oct, digital.nov, digital.dec]
+					}]
+				},
+
+				// Configuration options go here
+				options: {
+					events: ['click']
+				}
+			});
+		}
+
+		function physical_total(physical) {
+			let total = 0;
+			for (i in physical) {
+				total += physical[i];
+			}
+
+			return total;
+		}
+		function digital_total(digital) {
+			let total = 0;
+			for (i in digital) {
+				total += digital[i];
+			}
+
+			return total;
+		}
+		function render_physical_data(physical) {
+			for (i in physical) {
+				$('.rev_physical .' + i).text(physical[i]);
+			}
+		}
+
+		function render_digital_data(digital) {
+			for (i in digital) {
+				$('.rev_digital .' + i).text(digital[i]);
+			}
+		}
+
+		function calculate_percentage(physical, digital) {
+			// console.log(physical, digital)
+			let physical_total_count = 0
+			let digital_total_count = 0
+			let final_total = 0
+			let rev_physical_percentage = 0
+			let rev_digital_percentage = 0
+
+			physical_total_count = physical_total(physical)
+			digital_total_count = digital_total(digital)
+
+			final_total = physical_total_count + digital_total_count
+
+			rev_physical_percentage = (physical_total_count * 100) / final_total
+			rev_digital_percentage = (digital_total_count * 100) / final_total
+
+			$('.rev_physical .percent').text(rev_physical_percentage.toFixed(2) + '%')
+			$('.rev_digital .percent').text(rev_digital_percentage.toFixed(2) + '%')
+		}
+	</script>
+	<script>
+		(function ($) {
+			var physical = { jan: 0, feb: 0, mar: 0, apr: 0, may: 0, jun: 0, jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0, }
+			var digital = { jan: 0, feb: 0, mar: 0, apr: 0, may: 0, jun: 0, jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0, }
+			var physical_p = { jan: 0, feb: 0, mar: 0, apr: 0, may: 0, jun: 0, jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0, }
+			var digital_p = { jan: 0, feb: 0, mar: 0, apr: 0, may: 0, jun: 0, jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0, }
+
+			drawChart(physical, digital)
+
+			$('.physical input').each(function () {
+				$(this).on('blur', function () {
+					if ($(this).val() == '' || $(this).val() == undefined) {
+						physical_p[$(this).attr('class')] = 0
+						physical[$(this).attr('class')] = 0
+					} else {
+						physical_p[$(this).attr('class')] = $(this).val();
+						physical[$(this).attr('class')] = $(this).val() * ($('.p_unit_price').val() ?? 0);
+					}
+					drawChart(physical, digital)
+					$('.physical_total').text(physical_total(physical))
+					render_physical_data(physical)
+					calculate_percentage(physical, digital)
+				})
+			})
+
+			$('.p_unit_price').on('blur', function () {
+				for (var i = 0 in physical) {
+					physical[i] = $(this).val() * physical_p[i];
+				}
+				drawChart(physical, digital)
+				$('.physical_total').text(physical_total(physical))
+				render_physical_data(physical)
+				calculate_percentage(physical, digital)
+			})
+
+			$('.digital input').each(function () {
+				$(this).on('blur', function () {
+					if ($(this).val() == '' || $(this).val() == undefined) {
+						digital_p[$(this).attr('class')] = 0
+						digital[$(this).attr('class')] = 0
+					} else {
+						digital_p[$(this).attr('class')] = $(this).val();
+						digital[$(this).attr('class')] = $(this).val() * ($('.d_unit_price').val() ?? 0);
+					}
+					drawChart(physical, digital)
+					$('.digital_total').text(digital_total(digital))
+					render_digital_data(digital)
+					calculate_percentage(physical, digital)
+				})
+			})
+
+			$('.d_unit_price').on('blur', function () {
+				for (var i = 0 in digital) {
+					digital[i] = $(this).val() * digital_p[i];
+				}
+				drawChart(physical, digital)
+				$('.digital_total').text(digital_total(digital))
+				render_digital_data(digital)
+				calculate_percentage(physical, digital)
+			})
+		})(jQuery)
+	</script>
+
+</body>
+
+</html>
